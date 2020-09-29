@@ -60,7 +60,7 @@ function updateUser(userId, changes){
     body: JSON.stringify(changes) 
   }).then(
     response => response.json()
-  )
+  ).then(location.reload())
 }
 
 function toggleUserStatus(userId){
@@ -96,7 +96,7 @@ function deleteUser(userId){
     method:"DELETE"
   }).then(
     response => response.json()
-  )
+  ).then(location.reload())
 }
 
 function createUser(event){
@@ -111,7 +111,7 @@ function createUser(event){
     body: JSON.stringify(newUser) 
   }).then(
     response => response.json()
-  )
+  ).then(location.reload())
 
 
 }
