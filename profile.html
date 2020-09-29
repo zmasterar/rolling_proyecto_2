@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Profile</title>
+</head>
+<body onload="checkUser()">
+  <h3 id="username"></h3>
+  <h5>Cabiar contraseña</h5>
+  <form action="" onsubmit="changePassword(event)">
+    <input type="password" id="currentPassword" placeholder="contraseña actual">
+    <input type="password" id="newPassword" placeholder="contraseña nueva">
+    <input type="password" id="newPasswordConfirmation" placeholder="contraseña nueva">
+    <input type="submit" value="Guardar cambios">
+  </form>
+
+  
+  <a href="index.html">Volver</a>
+
+
+
+  
+  <script src="profile.js"></script>
+</body>
+</html>
