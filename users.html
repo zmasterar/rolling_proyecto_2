@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Usuarios</title>
+</head>
+<body onload="checkUser()">
+  <div class="container" id="usersContainer" style="display: none;">
+    <h1>Lista de usuarios</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#Id</th>
+          <th scope="col">username</th>
+          <th scope="col">Role</th>
+          <th scope="col">Status</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody id="usersTableBody">
+      </tbody>
+      <h3>Crear usuario</h3>
+      <form action="" name="newUser" class="form-inline" onsubmit="createUser(event)">
+        username: <input type="text" class="form-control mb-2 mr-sm-2" name="username" placeholder="User">
+        password: <input type="password" class="form-control mb-2 mr-sm-2" name="password" placeholder="Password">
+        rol: <input type="text" class="form-control mb-2 mr-sm-2" name="role" placeholder="Rol">        
+        <input type="submit" class="btn btn-primary mb-2" value="Crear Usuario">
+        <div class="invalid-feedback">
+          Datos incorrectos, intente nuevamente
+        </div>
+      </form>
+    </table>
+  </div>
+  <a href="index.html">Volver</a>
+  <script src="users.js"></script>
+</body>
+</html>
