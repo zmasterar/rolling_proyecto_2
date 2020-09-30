@@ -27,14 +27,17 @@ async function getUsers(){
         <td scope="col">${element.username}</td>
         <td scope="col">
           ${element.role}
+          </td>
+        <td scope="col">
           <button class="btn btn-sm btn-warning" onclick="toggleUserAdmin(${element.id})">Cambiar Rol</button>
         </td>
         <td scope="col">
           ${element.status}
+        </td>
+        <td>
           <button class="btn btn-sm btn-warning" onclick="toggleUserStatus(${element.id})">Cambiar estado</button>
         </td>
         <td scope="col">
-          
           <button class="btn btn-sm btn-danger" onclick="deleteUser(${element.id})">Eliminar</button>
         </td>
       </tr>
