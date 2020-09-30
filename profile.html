@@ -7,21 +7,27 @@
   <title>Profile</title>
 </head>
 <body onload="checkUser()">
-  <h3 id="username"></h3>
-  <h5>Cabiar contraseña</h5>
-  <form action="" onsubmit="changePassword(event)">
-    <input type="password" id="currentPassword" placeholder="contraseña actual">
-    <input type="password" id="newPassword" placeholder="contraseña nueva">
-    <input type="password" id="newPasswordConfirmation" placeholder="contraseña nueva">
-    <input type="submit" value="Guardar cambios">
+  <div class="container">
+    <h3 id="username"></h3>
+    <h5>Cabiar contraseña</h5>
+    <form action="" onsubmit="changePassword(event)">
+      <div class="form-group">
+        <label for="currentPassword">Contraseña actual</label>
+        <input class="form-control" type="password" name="currentPassword" id="currentPassword" placeholder="contraseña actual" required>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">Contraseña nueva</label>
+        <input class="form-control" type="password" name="newPassword" id="newPassword" placeholder="contraseña nueva" required>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">Confirmar Contraseña nueva</label>
+        <input class="form-control" type="password" name="newPasswordConfirmation" id="newPasswordConfirmation" placeholder="contraseña nueva" required>
+      </div>
+      <input class="btn btn-primary"type="submit" value="Guardar cambios">
+  </div>
   </form>
-
-  
   <a href="index.html">Volver</a>
 
-
-
-  
   <script src="profile.js"></script>
 </body>
 </html>
