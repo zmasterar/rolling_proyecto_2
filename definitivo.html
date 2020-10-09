@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="definitivo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Formulario/Cuestionario</title>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Pasos -->
+        <div class="pasos">
+            <div class="paso--1 paso-activo">Primer Paso</div>
+            <div class="paso--2">Segundo Paso</div>
+            <div class="paso--3">Tercer Paso</div>
+            <div class="paso--4">Cuarto Paso</div>
+            <div class="paso--5">Quinto Paso</div>
+            <div class="paso--6">Sexto Paso</div>
+            <div class="paso--7">Último Paso</div>
+        </div>
+
+        <!-- Formulario n°1 -->
+        <form class="form form-active" id="reinicio">
+            <div class="form-cabecera">
+                <h1 class="form-cabecera-title">
+                    Información Personal
+                </h1>
+                <p class="form-cabecera-text">
+                    Cuéntanos sobre ti
+                </p>
+            </div>
+            <label class="label" for="name">Nombre y Apellido</label>
+            <input type="text" placeholder="Ingresa tu nombre" id="name">
+
+            <label class="label" for="email">Correo Electrónico</label>
+            <input type="email" placeholder="Ingresa tu Correo Electrónico" id="email">
+
+            <button class="form-btn btn-warning" id="btn-1">Siguiente</button>
+
+        </form>
+        <!-- Formulario n°2 -->
+        <form class="form">
+            <div class="form-cabecera">
+                <h1 class="form-cabecera-title">
+                    Información Personal
+                </h1>
+                <p class="form-cabecera-text">
+                    Cuéntanos más sobre ti
+                </p>
+            </div>
+            <label for="address">Provincia</label>
+            <select class="custom-select custom" id="validationDefault04" required>
+                <option selected disabled value="">Seleccione</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value="Chaco">Chaco</option>
+                <option value="Chubut">Chubut</option>
+                <option value="Córdob">Córdoba</option>
+                <option value="Corrientes">Corrientes</option>
+                <option value="Entre Ríos">Entre Ríos</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="La Pampa">La Pampa</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Mendoza">Mendoza</option>
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquén">Neuquén</option>
+                <option value="Río Negro">Río Negro</option>
+                <option value="Salta">Salta</option>
+                <option value="San Juan">San Juan</option>
+                <option value="San Luis">San Luis</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Santiago del Estero">Santiago del Estero</option>
+                <option value="Tierra del Fuego">Tierra del Fuego</option>
+                <option value="Tucumán">Tucumán</option>
+            </select>
+
+            <label class="label" for="id">Documento Nacional de Identidad</label>
+            <input type="number" placeholder="Ingresa tu D.N.I." id="id">
+
+            <label for="id">Fecha de Nacimiento</label>
+            <input type="date" placeholder="Ingresa tu Fecha de Nacimiento" id="birthdate">
+
+            <button class="form-btn btn-warning" id="btn-2-prev">Anterior</button>
+            <button class="form-btn btn-warning" id="btn-2-next">Siguiente</button>
+        </form>
+        <!-- Formulario n°3 -->
+        <form class="form">
+            <div class="form-cabecera">
+                <h1 class="form-cabecera-title">
+                    Información Personal
+                </h1>
+                <p class="form-cabecera-text">
+                    Responda con certeza
+                </p>
+            </div>
+
+            <label for="text">¿Estuvo en contacto estrecho con alguna persona que tenga confirmado diagnóstico de
+                COVID-19?</label>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test1">Si</label>
+                <input class="form-check-input" type="radio" name="option1" id="Radio1" value="Si">
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test2">No</label>
+                <input class="form-check-input" type="radio" name="option1" id="Radio2" value="No" checked>
+            </div>
+            <label for="symptoms">Tiene pérdida del olfato o disminución del sentido del gusto, de reciente
+                aparición?</label>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test1">Si</label>
+                <input class="form-check-input" type="radio" name="option2" id="Radio3" value="Si">
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test2">No</label>
+                <input class="form-check-input" type="radio" name="option2" id="Radio4" value="No" checked>
+            </div>
+            <br>
+
+            <button class="form-btn btn-warning" id="btn-3-prev">Anterior</button>
+            <button class="form-btn btn-warning" id="btn-3-next">Siguiente</button>
+        </form>
+        <!-- Formulario n°4 -->
+        <form class="form">
+            <div class="form-cabecera">
+                <h1 class="form-cabecera-title">
+                    Información Personal
+                </h1>
+                <p class="form-cabecera-text">
+                    Responda con certeza
+                </p>
+            </div>
+            <label for="id">¿Reside y/o trabaja en geriátrico, cárcel, hogar de niñas/os o neuropsiquiátricos?
+                ¿Trabaja en salud o es personal esencial?
+                ¿Vive en un barrio popular y/o pertenece a pueblos originarios?
+            </label>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test1">Si</label>
+                <input class="form-check-input" type="radio" name="option3" id="Radio5" value="Si">
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test2">No</label>
+                <input class="form-check-input" type="radio" name="option3" id="Radio6" value="No" checked>
+            </div>
+            <label for="symptoms">¿Ha viajado al exterior en los últimos 14 días?</label>
+            <br>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test1">Si</label>
+                <input class="form-check-input" type="radio" name="option4" id="Radio7" value="Si">
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test2">No</label>
+                <input class="form-check-input" type="radio" name="option4" id="Radio8" value="No" checked>
+            </div>
+            <br>
+
+
+            <button class="form-btn btn-warning" id="btn-4-prev">Anterior</button>
+            <button class="form-btn btn-warning" id="btn-4-next">Siguiente</button>
+        </form>
+        <!-- Formulario n°5 -->
+        <form class="form">
+            <div class="form-cabecera">
+                <h1 class="form-cabecera-title">
+                    Información de Contagio
+                </h1>
+                <p class="form-cabecera-text">
+                    Síntomas
+                </p>
+            </div>
+
+            <label for="text">¿Tiene dos o más de estos síntomas?</label>
+            <ol>
+                <li>Temperatura de 37,5°C o mayor.</li>
+                <li>Tos</li>
+                <li>Dolor de Garganta</li>
+                <li>Agitación o sensación de falta de aire</li>
+                <li>Pérdida de Olfato</li>
+                <li>Diminución del gusto</li>
+            </ol>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test1">Si</label>
+                <input class="form-check-input" type="radio" name="option5" id="Radio9" value="Si">
+            </div>
+            <div class="form-check form-check-inline">
+                <label class="form-check-label" for="test2">No</label>
+                <input class="form-check-input" type="radio" name="option5" id="Radio10" value="No" checked>
+            </div>
+            <br>
+            <button class="form-btn btn-warning" id="btn-5-prev">Anterior</button>
+            <button class="form-btn btn-warning" id="btn-5-next">Siguiente</button>
+        </form>
+        <!-- Formulario n°6 -->
+        <form class="form">
+            <div class="form-cabecera">
+                <h1 class="form-cabecera-title">
+                    Información Personal
+                </h1>
+                <p class="form-cabecera-text">
+                    Viaje
+                </p>
+            </div>
+            <label for="symptoms">¿Ha vuelto de viaje (en los últimos 14 días) o tiene residencia en zonas de
+                transmisión local en Argentina?</label>
+
+            <ul class="list-group">
+                <li class="list-group-item fondo">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="option6" id="Radio11" value="No" checked>
+                        <label class="form-check-label" for="test1">No he viajado ni tengo residencia</label>
+                    </div>
+                </li>
+                <li class="list-group-item fondo">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="option6" id="Radio13" value="Si">
+                        <label class="form-check-label" for="test3">Provincia de Jujuy</label>
+                    </div>
+                </li>
+                <li class="list-group-item fondo">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="option6" id="Radio14" value="Si">
+                        <label class="form-check-label" for="test4">Provincia de Salta</label>
+                    </div>
+                </li>
+                <li class="list-group-item fondo">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input " type="radio" name="option6" id="Radio15" value="Si">
+                        <label class="form-check-label" for="test5">Otra Provincia</label>
+                    </div>
+                </li>
+            </ul>
+
+            <br>
+            <button class="form-btn btn-warning" id="btn-6-prev">Anterior</button>
+            <button class="form-btn btn-warning" id="btn-6" onclick="mostrar()">Enviar</button>
+        </form>
+
+        <!-- Paso 7 -->
+        <div class="form-mensaje"></div>
+    </main>
+    <!-- Tabla n°1 -->
+    <div class="margin">
+        <div class="table-responsive datos">
+            <h1 class="text-center">Datos</h1>
+            <table class="table">
+                <thead>
+                    <th scope="col">Nombre Completo</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Provincia</th>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Fecha de Nacimiento</th>
+                    <th scope="col">Contacto con positivo</th>
+                    <th scope="col">Pérdida de olfato o gusto</th>
+                    <th scope="col">Trabajo</th>
+                    <th scope="col">Viaje al exterior</th>
+                    <th scope="col">Algún síntoma</th>
+                    <th scope="col">Vuelta de viaje</th>
+                </thead>
+                <tbody id="tabla">
+                </tbody>
+            </table>
+        </div>
+        <div class="col-12 info">
+            <h1 class=" text-center">Información Respecto a los Datos</h1>
+        </div>
+        <div class="col-12">
+            <p id="instruc"></p>
+        </div>
+    </div>
+
+
+    <script src="definitivo.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
