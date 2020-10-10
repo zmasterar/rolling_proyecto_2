@@ -139,17 +139,23 @@ input[type='radio'] {
   display: block;
 }
 
-.form-active-animate{
-    animation: moveR 1s;
+.form-enter-from-right {
+  animation: enterFromRight 1s;
 }
 
-
-.form-inactive{
-    display: block;
-    animation: moveL 1s;
+.form-exit-to-left {
+  display: block;
+  animation: exitToLeft 1s;
 }
 
+.form-enter-from-left {
+  animation: enterFromLeft 1s;
+}
 
+.form-exit-to-right {
+  display: block;
+  animation: exitToRight 1s;
+}
 
 .paso-activo {
   background: #666;
@@ -167,18 +173,8 @@ input[type='radio'] {
   margin-left: 10px;
   margin-right: 10px;
 }
-@keyframes moveR {
-    100% {
-      transform: translateX(-27rem) scale(0.4);
-      opacity: 0;
-    }
-    0% {
-      transform: translateX(0rem) scale(1);
-      opacity: 1;
-    }
-  }
-  
- @keyframes moveL {
+
+@keyframes enterFromRight {
   100% {
     transform: translateX(0rem) scale(1);
     opacity: 1;
@@ -188,16 +184,38 @@ input[type='radio'] {
     opacity: 0;
   }
 }
-  
-  
-@keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+@keyframes exitToLeft {
+  100% {
+    transform: translateX(-27rem) scale(0.4);
+    opacity: 0;
   }
+  0% {
+    transform: translateX(0rem) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes enterFromLeft {
+  100% {
+    transform: translateX(0rem) scale(1);
+    opacity: 1;
+  }
+  0% {
+    transform: translateX(-27rem) scale(0.4);
+    opacity: 0;
+  }
+}
+
+@keyframes exitToRight {
+  100% {
+    transform: translateX(27rem) scale(0.4);
+    opacity: 0;
+  }
+  0% {
+    transform: translateX(0rem) scale(1);
+    opacity: 1;
+  }
+}
 
 .datos {
   border-left: 5px black solid;

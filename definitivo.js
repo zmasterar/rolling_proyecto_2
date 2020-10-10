@@ -100,17 +100,37 @@ var gotoNextForm = (prev, next, stepPrev, stepNext) => {
   var nextStep = document.querySelector(`.paso--${stepNext}`);
   var prevStep = document.querySelector(`.paso--${stepPrev}`);
 
-
-
-    nextForm.classList.add("form-active");
-    nextForm.classList.add("form-active-animate");
-    prevForm.classList.add("form-inactive");
+  nextForm.classList.add("form-active");
+  nextForm.classList.add("form-enter-from-right");
+  prevForm.classList.add("form-exit-to-left");
 
   prevStep.classList.remove("paso-activo");
   nextStep.classList.add("paso-activo");
 
   setTimeout(() => {
     prevForm.classList.remove("form-active");
+    prevForm.classList.remove("form-exit-to-left");
+    nextForm.classList.remove("form-enter-from-right");
+  }, 800);
+};
+
+var gotoPrevForm = (prev, next, stepPrev, stepNext) => {
+  var prevForm = prev.parentElement;
+  var nextForm = next.parentElement;
+  var nextStep = document.querySelector(`.paso--${stepNext}`);
+  var prevStep = document.querySelector(`.paso--${stepPrev}`);
+
+  nextForm.classList.add("form-active");
+  nextForm.classList.add("form-enter-from-left");
+  prevForm.classList.add("form-exit-to-right");
+
+  prevStep.classList.remove("paso-activo");
+  nextStep.classList.add("paso-activo");
+
+  setTimeout(() => {
+    prevForm.classList.remove("form-active");
+    prevForm.classList.remove("form-exit-to-right");
+    nextForm.classList.remove("form-enter-from-left");
   }, 800);
 };
 
