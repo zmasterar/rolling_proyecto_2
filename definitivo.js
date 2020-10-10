@@ -12,71 +12,69 @@ var enviar = document.querySelector("#btn-6");
 var btnvolver = document.querySelector("#volver");
 
 btn1.addEventListener("click", function (e) {
-    gotoNextForm(btn1, btnNext2, 1, 2);
-    e.preventDefault();
-})
+  gotoNextForm(btn1, btnNext2, 1, 2);
+  e.preventDefault();
+});
 
 btnNext2.addEventListener("click", function (e) {
-    gotoNextForm(btnNext2, btnNext3, 2, 3);
-    e.preventDefault();
-})
+  gotoNextForm(btnNext2, btnNext3, 2, 3);
+  e.preventDefault();
+});
 
 btnNext3.addEventListener("click", function (e) {
-    gotoNextForm(btnNext3, btnNext4, 3, 4);
-    e.preventDefault();
-})
+  gotoNextForm(btnNext3, btnNext4, 3, 4);
+  e.preventDefault();
+});
 
 btnNext4.addEventListener("click", function (e) {
-    gotoNextForm(btnNext4, btnNext5, 4, 5);
-    e.preventDefault();
-})
+  gotoNextForm(btnNext4, btnNext5, 4, 5);
+  e.preventDefault();
+});
 
 btnNext5.addEventListener("click", function (e) {
-    gotoNextForm(btnNext5, enviar, 5, 6);
-    e.preventDefault();
-})
-
+  gotoNextForm(btnNext5, enviar, 5, 6);
+  e.preventDefault();
+});
 
 btnPrev2.addEventListener("click", function (e) {
-    gotoNextForm(btnPrev2, btn1, 2, 1);
-    e.preventDefault();
-})
+  gotoPrevForm(btnPrev2, btn1, 2, 1);
+  e.preventDefault();
+});
 
 btnPrev3.addEventListener("click", function (e) {
-    gotoNextForm(btnPrev3, btnPrev2, 3, 2);
-    e.preventDefault();
-})
+  gotoPrevForm(btnPrev3, btnPrev2, 3, 2);
+  e.preventDefault();
+});
 
 btnPrev4.addEventListener("click", function (e) {
-    gotoNextForm(btnPrev4, btnPrev3, 4, 3);
-    e.preventDefault();
-})
+  gotoPrevForm(btnPrev4, btnPrev3, 4, 3);
+  e.preventDefault();
+});
 
 btnPrev5.addEventListener("click", function (e) {
-    gotoNextForm(btnPrev5, btnPrev4, 5, 4);
-    e.preventDefault();
-})
+  gotoPrevForm(btnPrev5, btnPrev4, 5, 4);
+  e.preventDefault();
+});
 
 btnPrev6.addEventListener("click", function (e) {
-    gotoNextForm(btnPrev6, btnPrev5, 6, 5);
-    e.preventDefault();
-})
-
+  gotoPrevForm(btnPrev6, btnPrev5, 6, 5);
+  e.preventDefault();
+});
 
 enviar.addEventListener("click", function (e) {
-    document.querySelector(`.paso--6`).classList.remove("paso-activo");
-    document.querySelector(`.paso--7`).classList.add("paso-activo");
-    enviar.parentElement.style.display = "none"
-    document.querySelector(".form-mensaje").innerHTML = `
+  document.querySelector(`.paso--6`).classList.remove("paso-activo");
+  document.querySelector(`.paso--7`).classList.add("paso-activo");
+  enviar.parentElement.style.display = "none";
+  document.querySelector(".form-mensaje").innerHTML = `
     <h1 class="form-mensaje-text">Se envió correctamete <br> <br>
     Abajo se encuentran las instrucciones</h1>
-    <button class="form-btn btn-warning" id="volver" onclick="volver()">Volver a Empezar</button>`
-    e.preventDefault()
-})
+    <button class="form-btn btn-warning" id="volver" onclick="volver()">Volver a Empezar</button>`;
+  e.preventDefault();
+});
 
 function volver() {
-    var reinicio = document.querySelector("#reinicio");
-    var texto = `
+  var reinicio = document.querySelector("#reinicio");
+  var texto = `
     <div class="form-cabecera">
                 <h1 class="form-cabecera-title">
                     Información Personal
@@ -91,17 +89,16 @@ function volver() {
             <label class="label" for="email">Correo Electrónico</label>
             <input type="email" placeholder="Ingresa tu Correo Electrónico" id="email">
 
-            <button class="form-btn btn-warning" id="btn-1">Siguiente</button>`
-    console.log("si funciona");
-    reinicio.innerHTML += texto;
+            <button class="form-btn btn-warning" id="btn-1">Siguiente</button>`;
+  console.log("si funciona");
+  reinicio.innerHTML += texto;
 }
 
-
 var gotoNextForm = (prev, next, stepPrev, stepNext) => {
-    var prevForm = prev.parentElement;
-    var nextForm = next.parentElement;
-    var nextStep = document.querySelector(`.paso--${stepNext}`);
-    var prevStep = document.querySelector(`.paso--${stepPrev}`);
+  var prevForm = prev.parentElement;
+  var nextForm = next.parentElement;
+  var nextStep = document.querySelector(`.paso--${stepNext}`);
+  var prevStep = document.querySelector(`.paso--${stepPrev}`);
 
 
 
@@ -109,16 +106,13 @@ var gotoNextForm = (prev, next, stepPrev, stepNext) => {
     nextForm.classList.add("form-active-animate");
     prevForm.classList.add("form-inactive");
 
-    prevStep.classList.remove("paso-activo");
-    nextStep.classList.add("paso-activo");
+  prevStep.classList.remove("paso-activo");
+  nextStep.classList.add("paso-activo");
 
-
-    setTimeout(() => {
-        prevForm.classList.remove("form-active");
-        prevForm.classList.remove("form-inactive");
-        nextForm.classList.remove("form-active-animate");
-    }, 800)
-}
+  setTimeout(() => {
+    prevForm.classList.remove("form-active");
+  }, 800);
+};
 
 var miTabla = document.querySelector("#tabla");
 var instruction = document.querySelector("#instruc");
@@ -129,17 +123,15 @@ var email = document.getElementById("email");
 var address = document.getElementById("validationDefault04");
 var id = document.getElementById("id");
 var birthdate = document.getElementById("birthdate");
-var positive = document.querySelector('input[name=option1]:checked');
-var taste = document.querySelector('input[name=option2]:checked');
-
+var positive = document.querySelector("input[name=option1]:checked");
+var taste = document.querySelector("input[name=option2]:checked");
 
 function mostrar() {
-
-    var work = document.querySelector('input[name=option3]:checked');
-    var trip = document.querySelector('input[name=option4]:checked');
-    var symps = document.querySelector('input[name=option5]:checked');
-    var returntrip = document.querySelector('input[name=option6]:checked');
-    texto = `
+  var work = document.querySelector("input[name=option3]:checked");
+  var trip = document.querySelector("input[name=option4]:checked");
+  var symps = document.querySelector("input[name=option5]:checked");
+  var returntrip = document.querySelector("input[name=option6]:checked");
+  texto = `
     <tr>
     <td>${forename.value}</td>
     <td>${email.value}</td>
@@ -154,15 +146,12 @@ function mostrar() {
     <td>${returntrip.value}</td>
     </tr>
     `;
-    miTabla.innerHTML += texto;
+  miTabla.innerHTML += texto;
 
-
-    if (positive.value === "Si" || taste.value === "Si") {
-        instruc1 = `<h1>
+  if (positive.value === "Si" || taste.value === "Si") {
+    instruc1 = `<h1>
     Te deberías volver a casa</h1>
     `;
-        instruction.innerHTML += instruc1;
-    }
-
+    instruction.innerHTML += instruc1;
+  }
 }
-
