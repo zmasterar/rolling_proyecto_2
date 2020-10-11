@@ -158,9 +158,9 @@ function mostrar() {
   document.getElementById("Radio11").checked = true; //viaje provincias
 
   if (positive.value === "Si" || taste.value === "Si") {
-    instruc1 = `<h1>
-    Te deberías volver a casa</h1>
-    `;
-    instruction.innerHTML += instruc1;
+    instruc1 = `<h1>Te deberías volver a casa</h1>`;
+  } else {
+    instruc1 = `<h1>Todo bien</h1>`;
   }
+  instruction.innerHTML = instruc1;
 }
