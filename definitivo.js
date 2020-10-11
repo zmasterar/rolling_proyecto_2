@@ -62,37 +62,15 @@ btnPrev6.addEventListener("click", function (e) {
 });
 
 enviar.addEventListener("click", function (e) {
-  document.querySelector(`.paso--6`).classList.remove("paso-activo");
-  document.querySelector(`.paso--7`).classList.add("paso-activo");
-  enviar.parentElement.style.display = "none";
-  document.querySelector(".form-mensaje").innerHTML = `
-    <h1 class="form-mensaje-text">Se envió correctamete <br> <br>
-    Abajo se encuentran las instrucciones</h1>
-    <button class="form-btn btn-warning" id="volver" onclick="volver()">Volver a Empezar</button>`;
+  gotoNextForm(btnPrev6, btnvolver, 6, 7);
+  mostrar();
   e.preventDefault();
 });
 
-function volver() {
-  var reinicio = document.querySelector("#reinicio");
-  var texto = `
-    <div class="form-cabecera">
-                <h1 class="form-cabecera-title">
-                    Información Personal
-                </h1>
-                <p class="form-cabecera-text">
-                    Cuéntanos sobre ti
-                </p>
-            </div>
-            <label class="label" for="name">Nombre y Apellido</label>
-            <input type="text" placeholder="Ingresa tu nombre" id="name">
-
-            <label class="label" for="email">Correo Electrónico</label>
-            <input type="email" placeholder="Ingresa tu Correo Electrónico" id="email">
-
-            <button class="form-btn btn-warning" id="btn-1">Siguiente</button>`;
-  console.log("si funciona");
-  reinicio.innerHTML += texto;
-}
+btnvolver.addEventListener("click", function (e) {
+  gotoPrevForm(btnvolver, btn1, 7, 1);
+  e.preventDefault();
+});
 
 var gotoNextForm = (prev, next, stepPrev, stepNext) => {
   var prevForm = prev.parentElement;
@@ -137,16 +115,14 @@ var gotoPrevForm = (prev, next, stepPrev, stepNext) => {
 var miTabla = document.querySelector("#tabla");
 var instruction = document.querySelector("#instruc");
 
-var forename = document.getElementById("name");
-var email = document.getElementById("email");
-
-var address = document.getElementById("validationDefault04");
-var id = document.getElementById("id");
-var birthdate = document.getElementById("birthdate");
-var positive = document.querySelector("input[name=option1]:checked");
-var taste = document.querySelector("input[name=option2]:checked");
-
 function mostrar() {
+  var forename = document.getElementById("name");
+  var email = document.getElementById("email");
+  var address = document.getElementById("validationDefault04");
+  var id = document.getElementById("id");
+  var birthdate = document.getElementById("birthdate");
+  var positive = document.querySelector("input[name=option1]:checked");
+  var taste = document.querySelector("input[name=option2]:checked");
   var work = document.querySelector("input[name=option3]:checked");
   var trip = document.querySelector("input[name=option4]:checked");
   var symps = document.querySelector("input[name=option5]:checked");
@@ -167,6 +143,19 @@ function mostrar() {
     </tr>
     `;
   miTabla.innerHTML += texto;
+
+  //reset de los forms
+  forename.value = "";
+  email.value = "";
+  address.value = "";
+  id.value = "";
+  birthdate.value = "";
+  document.getElementById("Radio2").checked = true; //contacto
+  document.getElementById("Radio4").checked = true; //olfato
+  document.getElementById("Radio6").checked = true; //trabajo
+  document.getElementById("Radio8").checked = true; //exterior
+  document.getElementById("Radio10").checked = true; //sintomas
+  document.getElementById("Radio11").checked = true; //viaje provincias
 
   if (positive.value === "Si" || taste.value === "Si") {
     instruc1 = `<h1>
