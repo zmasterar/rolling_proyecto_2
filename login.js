@@ -37,7 +37,7 @@ function _logout(event) {
   loginForm.style.display = "block";
   logout.style.display = "none";
   localStorage.removeItem("loginSession");
-  window.location.href = "/";
+  window.location.href = "index.html";
 }
 
 function isLogged() {
@@ -121,7 +121,7 @@ async function signUp(event) {
   if (userPosted) {
     alert("Se ha registrado correctamente");
     localStorage.setItem("loginSession", JSON.stringify(userPosted));
-    window.location.href = "/";
+    window.location.href = "index.html";
   } else {
     alert("Hubo un error. Intente nuevamente");
   }

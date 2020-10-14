@@ -8,12 +8,10 @@ function checkUser() {
       isLogged();
       getUsers();
     } else {
-      document.write(
-        `Esta página sólo puede ser accedida por un administrador <a href="index.html">Volver</a>`
-      );
+      window.location.href = "404.html";
     }
   } else {
-    window.location.href = "/404.html";
+    window.location.href = "404.html";
   }
 }
 async function getUsers() {
