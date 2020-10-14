@@ -13,9 +13,7 @@ function checkUser() {
       );
     }
   } else {
-    document.write(
-      `Debe estar logueado para entrar a esta página <a href="index.html">Volver</a>`
-    );
+    window.location.href = "/404.html";
   }
 }
 async function getUsers() {

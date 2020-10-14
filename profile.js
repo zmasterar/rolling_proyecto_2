@@ -11,9 +11,7 @@ function checkUser() {
     usernameTitle.innerHTML = user.username;
     isLogged();
   } else {
-    document.write(
-      `Debe estar logueado para entrar a esta página <a href="index.html">Volver</a>`
-    );
+    window.location.href = "/404.html";
   }
 }
 
