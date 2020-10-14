@@ -69,7 +69,7 @@ function logoutHTML(user) {
   return logoutHTML;
 }
 
-function signUp(event) {
+async function signUp(event) {
   let signUpForm = document.signUpForm;
   let usernameInput = signUpForm.usernameInput;
   let passwordInput = signUpForm.passwordInput;
@@ -89,21 +89,23 @@ function signUp(event) {
     passwordConfirmation.classList.add("is-invalid");
     return;
   }
-  fetch(`${loginApiUrl}/users?username=${newUser.username}`)
-    .then((response) => response.json())
-    .then((data) => {
-      user = data[0];
-      if (user) {
-        console.error(new Error("El usuario ya existe"));
-        usernameInput.classList.add("is-invalid");
-        userError.innerHTML = "El usuario ya existe";
-        return;
-      }
-    });
+  let fetchUser = await fetch(
+    `${loginApiUrl}/users?username=${newUser.username}`
+  );
+  let userFetched = await fetchUser.json();
+
+  user = userFetched[0];
+  if (user) {
+    console.error(new Error("El usuario ya existe"));
+    usernameInput.classList.add("is-invalid");
+    userError.innerHTML = "El usuario ya existe";
+    return;
+  }
   usernameInput.classList.remove("is-invalid");
   passwordInput.classList.remove("is-invalid");
   passwordConfirmation.classList.remove("is-invalid");
-  fetch(loginApiUrl + "/users/", {
+
+  let postUser = await fetch(loginApiUrl + "/users/", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -112,16 +114,15 @@ function signUp(event) {
       role: "user",
       status: "active",
     }),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json);
-      if (json) {
-        alert("Se ha registrado correctamente");
-        localStorage.setItem("loginSession", JSON.stringify(json));
-        window.location.href = "/";
-      } else {
-        alert("Hubo un error. Intente nuevamente");
-      }
-    });
+  });
+  let userPosted = await postUser.json();
+  console.log(userPosted);
+
+  if (userPosted) {
+    alert("Se ha registrado correctamente");
+    localStorage.setItem("loginSession", JSON.stringify(userPosted));
+    window.location.href = "/";
+  } else {
+    alert("Hubo un error. Intente nuevamente");
+  }
 }
