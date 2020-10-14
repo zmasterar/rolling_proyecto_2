@@ -67,4 +67,60 @@ function logoutHTML(user) {
       </li>`;
   return logoutHTML;
 }
+
+function signUp(event) {
+  let signUpForm = document.signUpForm;
+  let usernameInput = signUpForm.usernameInput;
+  let passwordInput = signUpForm.passwordInput;
+  let passwordConfirmation = signUpForm.passwordConfirmation;
+  let passwordError = document.getElementById("passwordError");
+  let userError = document.getElementById("userError");
+  event.preventDefault();
+  let newUser = {
+    username: usernameInput.value,
+    password: passwordInput.value,
+    passwordConfirmation: passwordConfirmation.value,
+  };
+  if (newUser.password != newUser.passwordConfirmation) {
+    passwordError.innerHTML = "Las contraseñas no coinciden";
+    console.error(new Error("Las contraseñas no coinciden"));
+    passwordInput.classList.add("is-invalid");
+    passwordConfirmation.classList.add("is-invalid");
+    return;
+  }
+  fetch(`${loginApiUrl}/users?username=${newUser.username}`)
+    .then((response) => response.json())
+    .then((data) => {
+      user = data[0];
+      if (user) {
+        console.error(new Error("El usuario ya existe"));
+        usernameInput.classList.add("is-invalid");
+        userError.innerHTML = "El usuario ya existe";
+        return;
+      }
+    });
+  usernameInput.classList.remove("is-invalid");
+  passwordInput.classList.remove("is-invalid");
+  passwordConfirmation.classList.remove("is-invalid");
+  fetch(loginApiUrl + "/users/", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      username: newUser.username,
+      password: newUser.password,
+      role: "user",
+      status: "active",
+    }),
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      if (json) {
+        alert("Se ha registrado correctamente");
+        localStorage.setItem("loginSession", JSON.stringify(json));
+        window.location.href = "/";
+      } else {
+        alert("Hubo un error. Intente nuevamente");
+      }
+    });
 }
