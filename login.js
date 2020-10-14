@@ -37,6 +37,7 @@ function _logout(event) {
   loginForm.style.display = "block";
   logout.style.display = "none";
   localStorage.removeItem("loginSession");
+  window.location.href = "/";
 }
 
 function isLogged() {

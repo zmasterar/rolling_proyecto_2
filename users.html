@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <title>Usuarios</title>
 </head>
+
 <body onload="checkUser()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div id="loginContainer" class="ml-auto">
+        <form action="" id="loginForm" class="form-inline" onsubmit="_login(event)" style="display: none;">
+          <input type="text" class="form-control mb-2 mr-sm-2" id="username" placeholder="User">
+          <input type="password" class="form-control mb-2 mr-sm-2" id="password" placeholder="Password">
+          <input type="submit" class="btn btn-primary mb-2" value="Entrar">
+          <a href="signup.html" class="btn btn-outline-success mb-2">Registrate</a>
+          <div class="invalid-feedback">
+            Datos incorrectos, intente nuevamente
+          </div>
+        </form>
+      </div>
+      <ul class="navbar-nav" id="logout" style="display: none;"></ul>
+    </div>
+  </nav>
   <div class="container" id="usersContainer" style="display: none;">
     <h1>Lista de usuarios</h1>
     <table class="table">
@@ -32,7 +56,8 @@
         <div class="form-group">
           <label for="password">Contraseña</label>
           <input type="password" class="form-control mb-2 mr-sm-2" name="password" placeholder="Password" required>
-          <small id="passwordHelp" class="form-text text-muted">Debe tener al menos 1 minúscula, 1 mayúscula, 1 número y una longitud de al menos 8 caracteres en total</small>
+          <small id="passwordHelp" class="form-text text-muted">Debe tener al menos 1 minúscula, 1 mayúscula, 1 número y
+            una longitud de al menos 8 caracteres en total</small>
         </div>
         <div class="form-group">
           <label for="role">Rol</label>
@@ -49,7 +74,8 @@
       </form>
     </table>
   </div>
-  <a href="index.html">Volver</a>
+  <script src="login.js"></script>
   <script src="users.js"></script>
 </body>
+
 </html>

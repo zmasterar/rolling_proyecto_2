@@ -10,8 +10,29 @@
 </head>
 
 <body onload="checkUser()">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div id="loginContainer" class="ml-auto">
+        <form action="" id="loginForm" class="form-inline" onsubmit="_login(event)" style="display: none;">
+          <input type="text" class="form-control mb-2 mr-sm-2" id="username" placeholder="User">
+          <input type="password" class="form-control mb-2 mr-sm-2" id="password" placeholder="Password">
+          <input type="submit" class="btn btn-primary mb-2" value="Entrar">
+          <a href="signup.html" class="btn btn-outline-success mb-2">Registrate</a>
+          <div class="invalid-feedback">
+            Datos incorrectos, intente nuevamente
+          </div>
+        </form>
+      </div>
+      <ul class="navbar-nav" id="logout" style="display: none;"></ul>
+    </div>
+  </nav>
   <div class="container">
-    <h3 id="username"></h3>
+    <h3 id="usernameTitle"></h3>
     <h5>Cabiar contraseña</h5>
     <form action="" onsubmit="changePassword(event)">
       <div class="form-group">
@@ -32,8 +53,8 @@
       <input class="btn btn-primary" type="submit" value="Guardar cambios">
   </div>
   </form>
-  <a href="index.html">Volver</a>
 
+  <script src="login.js"></script>
   <script src="profile.js"></script>
 </body>
 
