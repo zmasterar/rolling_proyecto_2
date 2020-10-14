@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <title>Profile</title>
 </head>
+
 <body onload="checkUser()">
   <div class="container">
     <h3 id="username"></h3>
@@ -13,21 +16,25 @@
     <form action="" onsubmit="changePassword(event)">
       <div class="form-group">
         <label for="currentPassword">Contraseña actual</label>
-        <input class="form-control" type="password" name="currentPassword" id="currentPassword" placeholder="contraseña actual" required>
+        <input class="form-control" type="password" name="currentPassword" id="currentPassword"
+          placeholder="contraseña actual" required>
       </div>
       <div class="form-group">
         <label for="newPassword">Contraseña nueva</label>
-        <input class="form-control" type="password" name="newPassword" id="newPassword" placeholder="contraseña nueva" required>
+        <input class="form-control" type="password" name="newPassword" id="newPassword" placeholder="contraseña nueva"
+          required>
       </div>
       <div class="form-group">
         <label for="newPassword">Confirmar Contraseña nueva</label>
-        <input class="form-control" type="password" name="newPasswordConfirmation" id="newPasswordConfirmation" placeholder="contraseña nueva" required>
+        <input class="form-control" type="password" name="newPasswordConfirmation" id="newPasswordConfirmation"
+          placeholder="contraseña nueva" required>
       </div>
-      <input class="btn btn-primary"type="submit" value="Guardar cambios">
+      <input class="btn btn-primary" type="submit" value="Guardar cambios">
   </div>
   </form>
   <a href="index.html">Volver</a>
 
   <script src="profile.js"></script>
 </body>
+
 </html>
