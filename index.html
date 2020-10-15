@@ -20,8 +20,31 @@
     <div class="container">
         <div class="vh-70 d-flex justify-content-center align-content-center flex-wrap log-sign">
             <div class="btn-group-vertical" role="group">
-                <button type="button" class="btn btn-primary zoom2"><a href="./home.html"></a>INGRESA</button>
-                <button type="button" class="btn btn-success zoom2"><a href="./home-english.html"></a>REGISTRATE</button>
+                <!-- Button to open the modal login form -->
+<button class="btn btn-primary zoom2" onclick="document.getElementById('id01').style.display='block'">Ingresá</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+    <form class="modal-content animate">
+
+        <div id="loginContainer" class="ml-auto d-flex flex-column align-items-center containerLogin">
+            <form action="" id="loginForm" class="form-inline" onsubmit="_login(event)" style="display: none;">
+                <input type="text" class="form-control mb-2 mr-sm-2" id="username" placeholder="User">
+                <input type="password" class="form-control mb-2 mr-sm-2" id="password" placeholder="Password">
+                <input type="submit" class="btn btn-primary mb-2" value="Entrar">
+                <div class="invalid-feedback">
+                    Datos incorrectos, intente nuevamente
+                  </div>
+            </form>
+        </div>
+    </form>
+</div>
+
+                <button type="button" class="btn btn-success zoom2"><a href="./home-english.html"></a>Registrate</button>
             </div>
         </div>
     </div>
@@ -33,6 +56,12 @@
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./js/index.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/definitivo.js"></script>
+    <script src="./js/login.js"></script>
+    <script src="./js/profile.js"></script>
+    <script src="./js/users.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
