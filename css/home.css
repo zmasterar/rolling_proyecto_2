@@ -1,0 +1,27 @@
+.card-img-top{
+    max-width: 540px;
+    max-height: 540px;
+}
+.card-img-top:hover{
+    filter: grayscale(80%); 
+}
+.card:hover { 
+    box-shadow: 0px 0px 10px 10px rgb(184,219,217);
+}
+.backtra {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;   
+}
+.promos{
+    color: white !important;
+    font-weight: bold;
+}
+
+
+
+.navbar-custom {
+    background: rgb(64,149,69);
+    background: linear-gradient(0deg, rgba(64,149,69,1) 17%, rgba(71,176,77,1) 50%);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}

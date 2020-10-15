@@ -79,8 +79,19 @@ img{
     display: flex;
     justify-content: center;
     border: 1px solid #888;
-    width: 20%; /* Could be more or less, depending on screen size */
+    width: 25%; /* Could be more or less, depending on screen size */
     height: 40%;
+  }
+
+  .modal-content2 {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #888;
+    width: 20%; /* Could be more or less, depending on screen size */
+    height: 70%;
   }
   
   /* The Close Button */
