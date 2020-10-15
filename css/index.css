@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(2,123,206);
+    background: radial-gradient(circle, rgba(2,123,206,0.8155637254901961) 11%, rgba(50,112,53,1) 78%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #fffffff5;
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+
+img{
+    margin-top: -50px;
+    transform: scale(0.5);
+}
+
+.log-sign{
+    margin-top: -140px;
+}
+
+.language {
+    width: 90px;
+    height: 40px;
+}
+
+.zoom2 {
+    font-family: 'Roboto', sans-serif;
+    transition: transform .2s;
+    margin: 0 auto;
+}
+
+.zoom2:hover {
+    transform: scale(1.2);
+}
+
+.vh-70 {
+    height: 70vh !important;
+}
+
+.container-footer2 {
+    color: rgb(234, 235, 237);
+    padding-top: 0 !important;
+}
+
+.backwhite {
+    background-color: rgba(42, 46, 48, 0.705);
+    border-radius: 2px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.buscatuvuelo {
+    margin-top: 5%;
+    padding-bottom: 0;
+    color: #020f18;
+    border-radius: 5px;
+    text-shadow: 1px 1px 1px rgba(241, 241, 241, 0.6);
+    font-family: 'Staatliches', cursive;
+}
