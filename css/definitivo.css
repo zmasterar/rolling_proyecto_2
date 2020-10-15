@@ -23,6 +23,7 @@ body {
 .pasos {
   width: 480px;
   display: flex;
+  margin-left: -45px;
   justify-self: center;
   align-items: center;
   position: absolute;
